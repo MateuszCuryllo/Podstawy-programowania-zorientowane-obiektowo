@@ -68,7 +68,7 @@ class Program
 
         int totalCalories = today.Day_sum();
 
-        Console.WriteLine("=== DZIENNY LICZNIK KALORII (Wersja z pętlą FOR) ===");
+        Console.WriteLine("=== DZIENNY LICZNIK KALORII ===");
         Console.WriteLine($"Breakfast:{breakfast.Calculate_calory()} kcal");
         Console.WriteLine($"Lunch:{lunch.Calculate_calory()} kcal");
         Console.WriteLine($"Dinner:{dinner.Calculate_calory()} kcal");
