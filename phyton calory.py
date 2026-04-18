@@ -66,11 +66,3 @@ day.add_meal(lunch)
 day.add_meal(dinner)
 
 day.display_summary()
-
-
-
-
-
-
-
-  
