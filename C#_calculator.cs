@@ -4,7 +4,7 @@ float number_1 = float.Parse(Console.ReadLine());
  Console.WriteLine("Chose what you want to do:\n - subtraction\n + addition\n * multiplication\n / division\n");
 string sign = Console.ReadLine();
 
-Console.WriteLine("Plis give me a secon number");
+Console.WriteLine("Plis give me a second number");
 float number_2 = float.Parse(Console.ReadLine());
 float result = 0;
 bool succes = true;
