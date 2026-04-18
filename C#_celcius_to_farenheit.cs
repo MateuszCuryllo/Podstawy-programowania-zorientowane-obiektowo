@@ -1,6 +1,6 @@
 ﻿Console.WriteLine("Welcom in converter C# Celcius to Farenheit!");
 
-Console.WriteLine("choose what you wont to do\n \nPres 1 Conwert Celcius to Farenheit\nPres 2 Convert Farenheit to Celcius  ");
+Console.WriteLine("choose what you want to do\n \nPres 1 Conwert Celcius to Farenheit\nPres 2 Convert Farenheit to Celcius  ");
 int choos = int.Parse(Console.ReadLine());
 
 
@@ -21,5 +21,5 @@ if  (choos == 2)
 }
 else 
 {
-    Console.WriteLine("sometchink wet wrong");
+    Console.WriteLine("sometching went wrong");
 }
