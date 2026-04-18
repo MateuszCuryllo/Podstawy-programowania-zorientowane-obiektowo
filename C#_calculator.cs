@@ -4,17 +4,19 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Welcome in Calculator\n \nPlis give me first number: ");
+        System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+
+        Console.Write("Welcome to the Calculator\n\nPlease give me the first number: ");
         float number_1 = float.Parse(Console.ReadLine());
 
-        Console.WriteLine("Chose what you want to do:\n - subtraction\n + addition\n * multiplication\n / division");
+        Console.WriteLine("\nChoose what you want to do:\n - subtraction\n + addition\n * multiplication\n / division");
         string sign = Console.ReadLine();
 
-        Console.WriteLine("Plis give me a second number");
+        Console.WriteLine("Please give me a second number:");
         float number_2 = float.Parse(Console.ReadLine());
+        
         float result = 0;
-        bool succes = true;
-
+        bool success = true;
         if (sign == "-" || sign == "subtraction")
         {
             result = number_1 - number_2;
@@ -36,16 +38,15 @@ class Program
             else
             {
                 Console.WriteLine("Error: Division by zero!");
-                succes = false;
+                success = false;
             }
         }
         else
         {
             Console.WriteLine("Unknown operation!");
-            succes = false;
+            success = false;
         }
-
-        if (succes)
+        if (success == true)
         {
             Console.WriteLine($"Result: {result}");
         }
