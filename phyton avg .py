@@ -4,7 +4,6 @@ List_grades=int(input ("Enter number of grades: "))
 
 avarage = 0
 
-
 for i in range(List_grades):
    grade = float(input(f"enter your grade {i+1}: "))
    avarage=avarage + grade
