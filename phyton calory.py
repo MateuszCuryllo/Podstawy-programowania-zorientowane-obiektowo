@@ -40,7 +40,6 @@ class DailyIntake:
         
         print(f"TOTAL INTAKE: {day_sum:.2f} kcal")
 
-# Products
 bread = FoodItem("Rye bread", 250)
 butter = FoodItem("Butter", 717)
 chicken = FoodItem("Chicken breast", 165)
@@ -48,23 +47,19 @@ rice = FoodItem("Rice", 350)
 tomato = FoodItem("Tomato", 18)
 cottage_cheese = FoodItem("Cottage cheese", 100)
 
-# Breakfast
 breakfast = Meal("Breakfast")
 breakfast.add_product(bread, 100)
 breakfast.add_product(butter, 10)
 
-# Lunch
 lunch = Meal("Lunch")
 lunch.add_product(chicken, 200)
 lunch.add_product(rice, 50)
 lunch.add_product(tomato, 150)
 
-# Dinner
 dinner = Meal("Dinner")
 dinner.add_product(cottage_cheese, 150)
 dinner.add_product(tomato, 100)
 
-# Day
 day = DailyIntake("2026-04-10")
 day.add_meal(breakfast)
 day.add_meal(lunch)
