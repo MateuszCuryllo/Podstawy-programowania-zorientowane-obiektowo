@@ -1,79 +1,76 @@
 
 class FoodItem:
-    def __init__(self, nazwa, kalorie_na_100g):
-        self.nazwa = nazwa
-        self.kalorie_na_100g = kalorie_na_100g
+    def __init__(self, name, calories_per_100g):
+        self.name = name
+        self.calories_per_100g = calories_per_100g
 
-    def oblicz_kalorie(self, waga):
-        return (waga / 100) * self.kalorie_na_100g
+    def calculate_calories(self, weight):
+        return (weight / 100) * self.calories_per_100g
 
 class Meal:
-    def __init__(self, nazwa_posilku):
-        self.nazwa_posilku = nazwa_posilku
-        self.skladniki = []
+    def __init__(self, meal_name):
+        self.meal_name = meal_name
+        self.ingredients = []
 
-    def dodaj_produkt(self, produkt, waga):
-        self.skladniki.append((produkt, waga))
-        print(f"Dodano {waga}g {produkt.nazwa} do posiłku: {self.nazwa_posilku}")
+    def add_product(self, product, weight):
+        self.ingredients.append((product, weight))
+        print(f"Added {weight}g {product.name} to meal: {self.meal_name}")
 
-    def suma_kalorii_posilku(self):
+    def meal_calories_sum(self):
         total = 0
-        for produkt, waga in self.skladniki:
-            total += produkt.oblicz_kalorie(waga)
+        for product, weight in self.ingredients:
+            total += product.calculate_calories(weight)
         return total
 
 class DailyIntake:
-    def __init__(self, data):
-        self.data = data
-        self.posilki = []
+    def __init__(self, date):
+        self.date = date
+        self.meals = []
 
-    def dodaj_posilek(self, posilek):
-        self.posilki.append(posilek)
+    def add_meal(self, meal):
+        self.meals.append(meal)
 
-    def wyswietl_podsumowanie(self):
-        print(f"\n--- Podsumowanie dnia: {self.data} ---")
-        suma_dnia = 0
-        for p in self.posilki:
-            kalorie = p.suma_kalorii_posilku()
-            suma_dnia += kalorie
-            print(f"{p.nazwa_posilku}: {kalorie:.2f} kcal")
+    def display_summary(self):
+        print(f"\n--- Day summary: {self.date} ---")
+        day_sum = 0
+        for m in self.meals:
+            calories = m.meal_calories_sum()
+            day_sum += calories
+            print(f"{m.meal_name}: {calories:.2f} kcal")
         
-      
-        print(f"CAŁKOWITE SPOŻYCIE: {suma_dnia:.2f} kcal")
+        print(f"TOTAL INTAKE: {day_sum:.2f} kcal")
 
+# Products
+bread = FoodItem("Rye bread", 250)
+butter = FoodItem("Butter", 717)
+chicken = FoodItem("Chicken breast", 165)
+rice = FoodItem("Rice", 350)
+tomato = FoodItem("Tomato", 18)
+cottage_cheese = FoodItem("Cottage cheese", 100)
 
+# Breakfast
+breakfast = Meal("Breakfast")
+breakfast.add_product(bread, 100)
+breakfast.add_product(butter, 10)
 
+# Lunch
+lunch = Meal("Lunch")
+lunch.add_product(chicken, 200)
+lunch.add_product(rice, 50)
+lunch.add_product(tomato, 150)
 
-chleb = FoodItem("Chleb żytni",250)
-maslo = FoodItem("Masło",717)
-kurczak = FoodItem("Pierś z kurczaka", 165)
-ryz = FoodItem("Ryż",350)
-pomidor = FoodItem("Pomidor",18)
-twarog = FoodItem("Twaróg chudy",100)
+# Dinner
+dinner = Meal("Dinner")
+dinner.add_product(cottage_cheese, 150)
+dinner.add_product(tomato, 100)
 
-sniadanie = Meal("Śniadanie")
-sniadanie.dodaj_produkt(chleb,100)
-sniadanie.dodaj_produkt(maslo,10)
+# Day
+day = DailyIntake("2026-04-10")
+day.add_meal(breakfast)
+day.add_meal(lunch)
+day.add_meal(dinner)
 
-
-obiad = Meal("Obiad")
-obiad.dodaj_produkt(kurczak,200)
-obiad.dodaj_produkt(ryz,50)
-obiad.dodaj_produkt(pomidor,150)
-
-
-kolacja = Meal("Kolacja")
-kolacja.dodaj_produkt(twarog, 150)
-kolacja.dodaj_produkt(pomidor, 100)
-
-
-dzien = DailyIntake("2026-04-10")
-dzien.dodaj_posilek(sniadanie)
-dzien.dodaj_posilek(obiad)
-dzien.dodaj_posilek(kolacja)
-
-dzien.wyswietl_podsumowanie()
-
+day.display_summary()
 
 
 
