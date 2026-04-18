@@ -1,5 +1,3 @@
-
-
 print("========Calculator of average grade========")
 
 List_grades=int(input ("Enter number of grades: "))
