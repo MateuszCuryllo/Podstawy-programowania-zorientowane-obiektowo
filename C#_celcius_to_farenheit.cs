@@ -5,14 +5,14 @@ int choos = int.Parse(Console.ReadLine());
 
 
 
-if  (choos == 1)
+if  (choose == 1)
 {
     Console.WriteLine($"Conwert Celcius to Farenheit enter value:  ");
     float celcius =float.Parse(Console.ReadLine());
     float result =celcius * 1.8f + 32 ;
     Console.WriteLine($"{celcius}°C is {result}F");
 }
-if  (choos == 2)
+if  (choose == 2)
 {
     Console.WriteLine($"Convert Farenheit to Celcius enter value:  ");
     float farenheit= float.Parse(Console.ReadLine());
